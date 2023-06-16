@@ -1,0 +1,167 @@
+-- Place all your plugin manager and plugins here
+
+--- Ensure that packer is installed
+local install_path = fn.stdpath('data') .. '/site/pack/lazy/lazy.nvim'
+-- local install_path = fn.stdpath('data') .. '/lazy/lazy.nvim'
+-- if fn.empty(fn.glob(install_path)) > 0 then
+if not vim.loop.fs_stat(install_path) then
+    LAZY_BOOTSTRAP = fn.system({'git', 'clone', "--filter=blob:none", "--branch=stable", 'https://github.com/folke/lazy.nvim.git', install_path})
+    print("Installing package manager, please close and reopen Neovim...")
+end
+
+--- Pre-pend run-time path (rtp)
+vim.opt.runtimepath:prepend(install_path)
+
+---- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd([[
+  augroup lazy_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | Lazy sync 
+  augroup end
+]])
+
+---- Use a protected call so we don't error out on first use
+local status_ok, lazy = pcall(require, "lazy")
+if not status_ok then
+  return
+end
+
+---- Initialize module variables
+local lazy = require'lazy'
+
+--- Design plugins
+plugins = {
+	-- Add plugins here
+
+    --- package management itself
+    "folke/lazy.nvim",
+
+    --- General useful
+    "rhysd/vim-grammarous", --- Grammar Checking
+    "tpope/vim-vinegar", --- Lightweight File Browser for Neovim
+
+    --- Quality of Life
+    "folke/which-key.nvim", --- WhichKey Keymapping finder
+    {"romgrk/barbar.nvim", dependencies = {'nvim-tree/nvim-web-devicons'},}, --- Neovim Tabline plugin
+    {"nvim-tree/nvim-tree.lua", dependencies = {'nvim-tree/nvim-web-devicons',}, version = 'nightly',}, --- NvimTree Tree File Explorer for Neovim
+    {
+        "HampusHauffman/block.nvim",
+        config = function()
+            require'configurations.plugins.block'
+        end
+    },
+
+    --- General Development
+    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',}, --- Integrates the tree-sitter library for incremental parsing of buffers
+    'andymass/vim-matchup', --- Matching parenthesis, brackets etc.
+    'bronson/vim-trailing-whitespace', --- Highlight trailing spaces
+    'scrooloose/nerdcommenter', -- Commenting shortcuts
+    'tpope/vim-surround', --- Stylishly Surrounds highlighted string with a delimiter/character
+
+    --- Git
+    'tpope/vim-fugitive', -- Git commands
+    'rhysd/git-messenger.vim', --- Shows the history of commits under the cursor in popup window
+    {'lewis6991/gitsigns.nvim', dependencies = {'nvim-lua/plenary.nvim'},}, --- Git added/removed in sidebar + inline blame; aka changes made to files are represented
+
+    --- Colorschemes
+    {'catppuccin/nvim', name = "catppuccin"},
+    'marko-cerovac/material.nvim',
+    'folke/tokyonight.nvim',
+    'EdenEast/nightfox.nvim',
+
+    --- Language Packs
+    'sheerun/vim-polyglot',
+
+    --- LSP Autocomplete
+    {'hrsh7th/nvim-cmp', 
+        config = function()
+            require'configurations.plugins.nvim-cmp'
+        end
+    }, --- Neovim Lua LSP Autocompletion engine
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
+
+    --- Native LSP
+    {
+        'neovim/nvim-lspconfig', --- Neovim Lua LSP integration configuration
+        config = function()
+            require'configurations.plugins.nvim-lspconfig'
+        end
+    },
+    'glepnir/lspsaga.nvim', --- LSP plugin for highly performant UI features
+
+    --- UNIX support
+    'tpope/vim-eunuch', --- UNIX shell command wrapper
+
+    --- Buffer Navigation/Status line/bar
+    'vim-airline/vim-airline', --- Status bar
+    'vim-airline/vim-airline-themes', --- Themes for the status bar/statusline 'vim-airline'
+
+    --- Telescope Requirements/Dependencies
+    {'nvim-telescope/telescope.nvim', dependencies={{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},}, -- Fuzzy file finder for Neovim written in Lua
+
+    --- Telescope
+    'nvim-telescope/telescope-fzf-native.nvim', --- FZF support for Telescope
+    {'nvim-telescope/telescope-file-browser.nvim', dependencies = {'nvim-lua/plenary.nvim'},}, --- File Browser plugin for Telescope
+
+    --- Snippets
+    'L3MON4D3/LuaSnip',
+
+    --- Dependencies
+    'nvim-lua/popup.nvim', -- Popup for other plugins, usually a dependency
+    'nvim-lua/plenary.nvim', -- Avoids callbacks, used by other plugins, usually a dependency
+    'nvim-tree/nvim-web-devicons', -- Lua fork of vim-devicons, provides the same icons as well as colors for each icon, usually a dependency
+
+    --- Wrappers
+    'kassio/neoterm', --- Wrapper of some vim/neovim's :terminal functions
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    --if LAZY_BOOTSTRAP then
+    --    require('lazy').sync()
+    --end
+}
+
+local opts = {
+    ui = {
+        -- a number <1 is a percentage., >1 is a fixed size
+        size = { width = 0.8, height = 0.8 },
+        wrap = true, -- wrap the lines in the ui
+        -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
+        border = "none",
+        icons = {
+          cmd = " ",
+          config = "",
+          event = "",
+          ft = " ",
+          init = " ",
+          import = " ",
+          keys = " ",
+          lazy = "󰒲 ",
+          loaded = "●",
+          not_loaded = "○",
+          plugin = " ",
+          runtime = " ",
+          source = " ",
+          start = "",
+          task = "✔ ",
+          list = {
+            "●",
+            "➜",
+            "★",
+            "‒",
+          },
+        },
+    }
+}
+
+--- Startup and add configure plugins
+lazy.setup(plugins, opts)
+
+-- Sourcing configuration files
+
+--- LSP and Autocompletion
+
+--- Others
+
