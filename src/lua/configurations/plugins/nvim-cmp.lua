@@ -36,7 +36,9 @@ cmp.setup({
     -- { name = 'snippy' }, -- For snippy users.
   }, {
     { name = 'buffer' },
-  })
+  }), {
+    { name = 'orgmode'}
+  }
 })
 
 -- Set configuration for specific filetype.

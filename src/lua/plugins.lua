@@ -45,14 +45,31 @@ plugins = {
     {"romgrk/barbar.nvim", dependencies = {'nvim-tree/nvim-web-devicons'},}, --- Neovim Tabline plugin
     {"nvim-tree/nvim-tree.lua", dependencies = {'nvim-tree/nvim-web-devicons',}, version = 'nightly',}, --- NvimTree Tree File Explorer for Neovim
     {
+        --- Code Block Visualizer
         "HampusHauffman/block.nvim",
+        build = ':BlockOn',
         config = function()
             require'configurations.plugins.block'
         end
     },
+    {
+        --- Neovim + Org Mode-like implementation
+        "nvim-orgmode/orgmode",
+        dependencies = {'nvim-treesitter/nvim-treesitter'},
+        config = function()
+            require'configurations.plugins.orgmode'
+        end
+    },
 
     --- General Development
-    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',}, --- Integrates the tree-sitter library for incremental parsing of buffers
+    {
+        --- Integrates the tree-sitter library for incremental parsing of buffers
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate',
+        config = function()
+            require'configurations.plugins.treesitter'
+        end
+    }, 
     'andymass/vim-matchup', --- Matching parenthesis, brackets etc.
     'bronson/vim-trailing-whitespace', --- Highlight trailing spaces
     'scrooloose/nerdcommenter', -- Commenting shortcuts
