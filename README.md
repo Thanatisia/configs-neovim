@@ -30,6 +30,9 @@ This repository contains the Neovim configuration I use on all my systems that i
     cp -r src ~/.config/nvim
     ```
 
+### Extra
+- For more information on setting up, please refer to [BUILD.md](BUILD.md)
+
 ## Documentations
 ### Contents
 + README.md : This README

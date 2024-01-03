@@ -89,15 +89,13 @@ plugins = {
     --- Language Packs
     'sheerun/vim-polyglot',
 
-    --- LSP Autocomplete
-    {'hrsh7th/nvim-cmp', 
+    --- Snippets
+    {
+        'L3MON4D3/LuaSnip',
         config = function()
-            require'configurations.plugins.nvim-cmp'
+            require'configurations.plugins.luasnip'
         end
-    }, --- Neovim Lua LSP Autocompletion engine
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
+    },
 
     --- Native LSP
     {
@@ -107,6 +105,16 @@ plugins = {
         end
     },
     'glepnir/lspsaga.nvim', --- LSP plugin for highly performant UI features
+
+    --- LSP Autocomplete
+    {'hrsh7th/nvim-cmp',
+        config = function()
+            require'configurations.plugins.nvim-cmp'
+        end
+    }, --- Neovim Lua LSP Autocompletion engine
+    'hrsh7th/cmp-nvim-lsp',
+    'hrsh7th/cmp-buffer',
+    'hrsh7th/cmp-path',
 
     --- UNIX support
     'tpope/vim-eunuch', --- UNIX shell command wrapper
@@ -121,9 +129,6 @@ plugins = {
     --- Telescope
     'nvim-telescope/telescope-fzf-native.nvim', --- FZF support for Telescope
     {'nvim-telescope/telescope-file-browser.nvim', dependencies = {'nvim-lua/plenary.nvim'},}, --- File Browser plugin for Telescope
-
-    --- Snippets
-    'L3MON4D3/LuaSnip',
 
     --- Dependencies
     'nvim-lua/popup.nvim', -- Popup for other plugins, usually a dependency
