@@ -44,3 +44,9 @@
     - Updated lua script 'plugins.lua' in 'src/lua/'
         + Added new markdown-support plugin 'glow.nvim'
 
+#### 2105H
+- Updates
+    - Updated document 'BUILD.md'
+        + Added new plugin dependencies
+        + Added new CLI utility dependencies
+
