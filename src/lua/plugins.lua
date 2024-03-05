@@ -153,6 +153,16 @@ plugins = {
     --- UNIX support
     'tpope/vim-eunuch', --- UNIX shell command wrapper
 
+    --- Filetype support
+    ---- Markdown
+    {
+        "ellisonleao/glow.nvim",
+        cmd = "Glow",
+        config = function()
+            require'configurations.plugins.glow'
+        end
+    },
+
     --- Buffer Navigation/Status line/bar
     'vim-airline/vim-airline', --- Status bar
     'vim-airline/vim-airline-themes', --- Themes for the status bar/statusline 'vim-airline'

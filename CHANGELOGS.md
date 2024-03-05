@@ -35,3 +35,12 @@
         - settings.lua
             + Added cyberdream colorscheme
 
+#### 2046H
+- New
+    + Added new lua script 'glow.lua' in 'src/lua/configurations/plugins/' for the glow.nvim markdown file viewer plugin
+- Updates
+    - Updated Plugin configuration lua script 'treesitter.lua' in 'src/lua/configurations/plugins/'
+        + Added new default installs 
+    - Updated lua script 'plugins.lua' in 'src/lua/'
+        + Added new markdown-support plugin 'glow.nvim'
+
