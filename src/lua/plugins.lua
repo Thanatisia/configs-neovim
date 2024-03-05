@@ -41,6 +41,13 @@ plugins = {
     "tpope/vim-vinegar", --- Lightweight File Browser for Neovim
 
     --- Quality of Life
+    {
+        'goolord/alpha-nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function ()
+            require'configurations.plugins.alpha'
+        end
+    },
     "folke/which-key.nvim", --- WhichKey Keymapping finder
     {"romgrk/barbar.nvim", dependencies = {'nvim-tree/nvim-web-devicons'},}, --- Neovim Tabline plugin
     {"nvim-tree/nvim-tree.lua", dependencies = {'nvim-tree/nvim-web-devicons',}, version = 'nightly',}, --- NvimTree Tree File Explorer for Neovim
@@ -75,6 +82,25 @@ plugins = {
     'scrooloose/nerdcommenter', -- Commenting shortcuts
     'tpope/vim-surround', --- Stylishly Surrounds highlighted string with a delimiter/character
 
+    --- Markdown file support
+    {
+        --- Image drag-and-drop to markdown file
+        'HakonHarnes/img-clip.nvim',
+        --- event = "BufEnter",
+        opt = {
+            -- Add options here
+            -- or leave it empty to use the default settings
+        },
+        keys = {
+            -- suggested keymapping
+            --- Paste image hyperlink into markdown file using <leader>p
+            { "<leader>p", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
+        },
+        config = function()
+            require'configurations.plugins.img-clip'
+        end
+    },
+
     --- Git
     'tpope/vim-fugitive', -- Git commands
     'rhysd/git-messenger.vim', --- Shows the history of commits under the cursor in popup window
@@ -85,6 +111,14 @@ plugins = {
     'marko-cerovac/material.nvim',
     'folke/tokyonight.nvim',
     'EdenEast/nightfox.nvim',
+    {
+        "scottmckendry/cyberdream.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require'configurations.plugins.cyberdream'
+        end
+    },
 
     --- Language Packs
     'sheerun/vim-polyglot',

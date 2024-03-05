@@ -7,7 +7,7 @@ treesitter_cfgs.setup {
     --- Treesitter Configurations
 
     -- Ensure that the following Treesitter languages are installed; Equivalent to running ':TSUpdate [language]'
-    ensure_installed = {'c', 'lua', 'python', 'vim', 'vimdoc', 'query', 'org'},
+    ensure_installed = {'c', 'cpp', 'lua', 'python', 'vim', 'vimdoc', 'query', 'org', 'markdown'},
 
     -- Install parsers synchronously (only applied to 'ensure_installed')
     sync_install = false,
