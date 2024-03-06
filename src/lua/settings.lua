@@ -62,6 +62,7 @@ vim.o.background = 'dark' --- Set Background color (light|dark)
 vim.o.termguicolors = true --- Set to use terminal gui colors
 ---vim.cmd[[colorscheme tokyonight-storm]]
 ---vim.cmd[[colorscheme duskfox]]
+---vim.api.nvim_command "colorscheme cyberdream"
 vim.api.nvim_command "colorscheme catppuccin"
 
 

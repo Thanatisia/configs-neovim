@@ -16,9 +16,11 @@
 + lua-language-server : Previously named Sumneko Lua LSP
 + marksman : Markdown language server
 + pyright  : Python language server
++ tsserver : Javascript + Typescript language server
 
 #### Utilities
 + block
++ glow : Markdown Renderer CLI utility
 + LuaSnip
 + nvim-cmp
 + nvim-lspconfig
