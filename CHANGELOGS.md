@@ -63,3 +63,8 @@
     - Updated neovim plugins lua script 'plugins.lua' in 'src/lua/'
         + Fixed plugin 'nvim-tree' and imported configuration file for 'nvim-tree/nvim-tree'
 
+#### 1514H
+- Updates
+    - Updated document 'plugins.md'
+        + Added list indicators
+

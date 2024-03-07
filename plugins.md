@@ -11,11 +11,11 @@
     + nvim-tree/nvim-tree.lua : NvimTree Tree File Explorer for Neovim
     + HampusHauffman/block.nvim : Code Block Visualizer
 - General Development
-    nvim-treesitter/nvim-treesitter : Integrates the tree-sitter library for incremental parsing of buffers
-    andymass/vim-matchup            : Matching parenthesis, brackets etc.
-    bronson/vim-trailing-whitespace : Highlight trailing spaces
-    scrooloose/nerdcommenter        : Commenting shortcuts
-    tpope/vim-surround              : Stylishly Surrounds highlighted string with a delimiter/character
+    + nvim-treesitter/nvim-treesitter : Integrates the tree-sitter library for incremental parsing of buffers
+    + andymass/vim-matchup            : Matching parenthesis, brackets etc.
+    + bronson/vim-trailing-whitespace : Highlight trailing spaces
+    + scrooloose/nerdcommenter        : Commenting shortcuts
+    + tpope/vim-surround              : Stylishly Surrounds highlighted string with a delimiter/character
 - Git
     + tpope/vim-fugitive      : Git commands
     + rhysd/git-messenger.vim : Shows the history of commits under the cursor in popup window
