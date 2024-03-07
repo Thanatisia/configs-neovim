@@ -3,6 +3,7 @@
 ## Table of Contents
 + [2024-01-03](#2024-01-03)
 + [2024-03-05](#2024-03-05)
++ [2024-03-07](#2024-03-07)
 
 ## Logs
 ### 2024-01-03
@@ -49,4 +50,16 @@
     - Updated document 'BUILD.md'
         + Added new plugin dependencies
         + Added new CLI utility dependencies
+
+### 2024-03-07
+#### 1507H
+- New
+    + Added neovim keybindings lua script 'keybindings.lua' in 'src/lua'
+    + Added neovim plugin configuration lua script 'nvim-tree.lua' in 'src/lua/configurations/plugins/'
+
+- Updates
+    - Updated neovim initialization lua script 'init.lua' in 'src/'
+        + Added keybindings.lua to the end
+    - Updated neovim plugins lua script 'plugins.lua' in 'src/lua/'
+        + Fixed plugin 'nvim-tree' and imported configuration file for 'nvim-tree/nvim-tree'
 

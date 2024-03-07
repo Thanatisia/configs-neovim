@@ -50,7 +50,17 @@ plugins = {
     },
     "folke/which-key.nvim", --- WhichKey Keymapping finder
     {"romgrk/barbar.nvim", dependencies = {'nvim-tree/nvim-web-devicons'},}, --- Neovim Tabline plugin
-    {"nvim-tree/nvim-tree.lua", dependencies = {'nvim-tree/nvim-web-devicons',}, version = 'nightly',}, --- NvimTree Tree File Explorer for Neovim
+    {
+        "nvim-tree/nvim-tree.lua", 
+        version = '*',
+        lazy = false,
+        dependencies = {
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = function()
+            require"configurations.plugins.nvim-tree"
+        end
+    }, --- NvimTree Tree File Explorer for Neovim
     {
         --- Code Block Visualizer
         "HampusHauffman/block.nvim",
