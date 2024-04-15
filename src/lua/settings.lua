@@ -4,8 +4,6 @@
 -- vim.o = vim.opt = Vim Options
 -- vim.cmd = Vim commands
 
-HOME = os.getenv("HOME")
-
 -- Global Variables
 vim.g.mapleader = "," -- variable represents <leader>
 vim.g.maplocalleader = "\\"

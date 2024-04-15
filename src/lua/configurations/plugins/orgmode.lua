@@ -17,7 +17,7 @@ local work = notes .. "/work";
 local home = notes .. "/home";
 
 --- Load custom treesitter grammar for org filetype
-orgmode.setup_ts_grammar()
+--- Deprecated: orgmode.setup_ts_grammar()
 
 --- Orgmode setup
 orgmode.setup({
