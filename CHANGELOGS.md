@@ -4,6 +4,7 @@
 + [2024-01-03](#2024-01-03)
 + [2024-03-05](#2024-03-05)
 + [2024-03-07](#2024-03-07)
++ [2024-04-15](#2024-04-15)
 
 ## Logs
 ### 2024-01-03
@@ -67,4 +68,36 @@
 - Updates
     - Updated document 'plugins.md'
         + Added list indicators
+
+### 2024-04-15
+#### 1504H
+- New
+    + Added new lua configuration script 'cmp-nvim-lsp.lua' in 'lua/configurations/plugins/' for plugin 'cmp-nvim-lsp'
+    + Added new lua configuration script 'harpoon.lua' in 'lua/configurations/plugins/' for plugin 'harpoon'
+    + Added new lua configuration script 'markdown-preview.lua' in 'lua/configurations/plugins/' for plugin 'markdown-preview'
+    + Added new lua configuration script 'neodev.lua' in 'lua/configurations/plugins/' for plugin 'neodev'
+
+- Updates
+    - Updated lua-language-server LSP plugin configuration file 'lua-language-server.lua' in 'lua/configurations/lsp/'
+        + Fixed setup configuration table and settings key-value mapping
+    - Updated nvim-cmp plugin configuration file 'nvim-cmp.lua' in 'lua/configurations/plugins/'
+        + Added nvim_lua: Neovim lua API autocompletion and documentation
+        + Added sources to cmdline setup
+    - Updated orgmode plugin configuration file 'orgmode.lua' in 'lua/configurations/plugins/'
+        + Removed deprecated function
+    - Updated treesitter plugin configuration file 'treesitter.lua' in 'lua/configurations/plugins/'
+        - Added languages for autoinstallation of treesitter syntaxes
+            + dockerfile
+            + make
+    - Updated lua script 'keybindings.lua' in 'lua/'
+        + Added new keymap/keybinding for opening ':Telescope fd'
+    - Updated lua script 'plugins.lua' in 'lua/'
+        + Added new plugin 'folke/neodev.nvim' : Neovim vim lua API autocompletion and documentations
+        + Added new plugin 'iamcco/markdown-preview.nvim' : Markdown file Previewer
+        + Added new plugin 'ThePrimeagen/harpoon' : The buffer-file finder/jumper
+        + Added comments
+    - Updated lua script 'settings.lua' in 'lua/'
+        + Moved 'HOME' to 'lua/variables.lua'
+    - Updated lua script 'variables.lua' in 'lua/'
+        + Moved 'HOME' from 'lua/settings.lua' as an environment variable
 

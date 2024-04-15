@@ -9,4 +9,6 @@ fn = vim.fn
 nvim_data = fn.stdpath('data')
 nvim_config = fn.stdpath('config')
 
+--- Environment Variables
+HOME = os.getenv("HOME")
 

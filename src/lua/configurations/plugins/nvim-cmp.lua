@@ -72,12 +72,12 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
   }),
   sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
+    { name = 'nvim_lsp' }, -- For nvim-lsp
+    { name = 'nvim_lua' }, -- For nvim lua API LSP
     -- { name = 'vsnip' }, -- For vsnip users.
     { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-  }, {
     { name = 'buffer' },
   }), {
     { name = 'orgmode'}
@@ -113,7 +113,8 @@ cmp.setup.filetype('gitcommit', {
 cmp.setup.cmdline({ '/', '?' }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
+    { name = 'buffer' },
+    { name = 'path' }
   }
 })
 
@@ -135,9 +136,9 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
     'force',
     lsp_defaults.capabilities,
     require('cmp_nvim_lsp').default_capabilities()
-    --- capabilities = require('cmp_nvim_lsp').default_capabilities()
 )
 -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 --require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
 --  capabilities = capabilities
 --}
+

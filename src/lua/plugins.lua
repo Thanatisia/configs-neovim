@@ -86,7 +86,7 @@ plugins = {
         config = function()
             require'configurations.plugins.treesitter'
         end
-    }, 
+    },
     'andymass/vim-matchup', --- Matching parenthesis, brackets etc.
     'bronson/vim-trailing-whitespace', --- Highlight trailing spaces
     'scrooloose/nerdcommenter', -- Commenting shortcuts
@@ -141,6 +141,15 @@ plugins = {
         end
     },
 
+    --- Lua configurations
+    {
+        'folke/neodev.nvim',
+        opts = {},
+        config = function()
+            require'configurations.plugins.neodev'
+        end
+    },
+
     --- Native LSP
     {
         'neovim/nvim-lspconfig', --- Neovim Lua LSP integration configuration
@@ -151,14 +160,15 @@ plugins = {
     'glepnir/lspsaga.nvim', --- LSP plugin for highly performant UI features
 
     --- LSP Autocomplete
-    {'hrsh7th/nvim-cmp',
+    {
+        'hrsh7th/nvim-cmp',
         config = function()
             require'configurations.plugins.nvim-cmp'
         end
     }, --- Neovim Lua LSP Autocompletion engine
-    'hrsh7th/cmp-nvim-lsp',
-    'hrsh7th/cmp-buffer',
-    'hrsh7th/cmp-path',
+    'hrsh7th/cmp-nvim-lsp', --- Neovim Lua vim API LSP server
+    'hrsh7th/cmp-buffer',   --- nvim-cmp autocompletion via buffer support
+    'hrsh7th/cmp-path',     --- nvim-cmp autocompletion via path support
 
     --- UNIX support
     'tpope/vim-eunuch', --- UNIX shell command wrapper
@@ -172,10 +182,28 @@ plugins = {
             require'configurations.plugins.glow'
         end
     },
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        -- build = function() vim.fn["mkdp#util#install"]() end,
+        build = "cd app && npm install",
+        config = function()
+            require'configurations.plugins.markdown-preview'
+        end
+    },
 
     --- Buffer Navigation/Status line/bar
     'vim-airline/vim-airline', --- Status bar
     'vim-airline/vim-airline-themes', --- Themes for the status bar/statusline 'vim-airline'
+    {
+        "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        dependencies = { "nvim-lua/plenary.nvim" },
+        config = function()
+            require('configurations.plugins.harpoon')
+        end
+    }, --- Harpoon: Buffer fuzzy finder/jumper
 
     --- Telescope Requirements/Dependencies
     {'nvim-telescope/telescope.nvim', dependencies={{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}},}, -- Fuzzy file finder for Neovim written in Lua
