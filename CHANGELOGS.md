@@ -5,6 +5,7 @@
 + [2024-03-05](#2024-03-05)
 + [2024-03-07](#2024-03-07)
 + [2024-04-15](#2024-04-15)
++ [2024-05-16](#2024-05-16)
 
 ## Logs
 ### 2024-01-03
@@ -100,4 +101,14 @@
         + Moved 'HOME' to 'lua/variables.lua'
     - Updated lua script 'variables.lua' in 'lua/'
         + Moved 'HOME' from 'lua/settings.lua' as an environment variable
+
+### 2024-05-16
+#### 1243H
+- New
+    + Added new lua configuration script 'toggleterm.lua' in 'lua/configurations/plugins/' for plugin 'akinsho/toggleterm.nvim'
+- Updates
+    - Updated document 'plugins.md'
+        + Added new plugins
+    - Updated lua script 'plugins.lua' in 'lua/'
+        + Added new plugin 'akinsho/toggleterm.nvim' : Terminal Toggler plugin for Neovim
 
