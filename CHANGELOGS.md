@@ -112,3 +112,12 @@
     - Updated lua script 'plugins.lua' in 'lua/'
         + Added new plugin 'akinsho/toggleterm.nvim' : Terminal Toggler plugin for Neovim
 
+#### 1718H
+- New
+    + Added new lua configuration script 'oil.lua' in 'lua/configurations/plugins/' for plugin 'stevearc/oil.nvim'
+- Updates
+    - Updated document 'plugins.md'
+        + Added new plugins
+    - Updated lua script 'plugins.lua' in 'lua/'
+        + Added new plugin 'stevearc/oil.nvim' : Neovim File Explorer/Manager that lets you edit files like a buffer
+
