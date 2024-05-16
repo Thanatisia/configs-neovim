@@ -16,6 +16,10 @@
     + bronson/vim-trailing-whitespace : Highlight trailing spaces
     + scrooloose/nerdcommenter        : Commenting shortcuts
     + tpope/vim-surround              : Stylishly Surrounds highlighted string with a delimiter/character
+- Terminal Customization
+    + akinsho/toggleterm.nvim : Terminal Toggle plugin
+- Markdown File Support
+    + HakonHarnes/img-clip.nvim : Markdown image helper plugin
 - Git
     + tpope/vim-fugitive      : Git commands
     + rhysd/git-messenger.vim : Shows the history of commits under the cursor in popup window

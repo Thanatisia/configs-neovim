@@ -92,6 +92,14 @@ plugins = {
     'scrooloose/nerdcommenter', -- Commenting shortcuts
     'tpope/vim-surround', --- Stylishly Surrounds highlighted string with a delimiter/character
 
+    --- Terminal Customization
+    {
+        'akinsho/toggleterm.nvim',
+        config = function()
+            require'configurations.plugins.toggleterm'
+        end
+    },
+
     --- Markdown file support
     {
         --- Image drag-and-drop to markdown file
