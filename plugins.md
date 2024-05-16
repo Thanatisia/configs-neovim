@@ -18,6 +18,8 @@
     + tpope/vim-surround              : Stylishly Surrounds highlighted string with a delimiter/character
 - Terminal Customization
     + akinsho/toggleterm.nvim : Terminal Toggle plugin
+- Features
+    + stevearc/oil.nvim : Neovim File Explorer/Manager that lets you edit your filesystem like a buffer
 - Markdown File Support
     + HakonHarnes/img-clip.nvim : Markdown image helper plugin
 - Git
@@ -57,3 +59,4 @@
     + nvim-tree/nvim-web-devicons : Lua fork of vim-devicons, provides the same icons as well as colors for each icon, usually a dependency
 - Wrappers
     + kassio/neoterm : Wrapper of some vim/neovim's :terminal functions
+

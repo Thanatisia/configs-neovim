@@ -100,6 +100,20 @@ plugins = {
         end
     },
 
+    --- Features
+    {
+        --- File Manager/Explorer like a buffer
+        -- Package Definition
+        'stevearc/oil.nvim',
+        opts = {},
+        -- Optional Dependencies
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        -- Configurations
+        config = function()
+            require'configurations.plugins.oil'
+        end
+    },
+
     --- Markdown file support
     {
         --- Image drag-and-drop to markdown file
