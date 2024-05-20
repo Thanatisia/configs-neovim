@@ -27,3 +27,5 @@ require('configurations.lsp.bashls') --- Setup bashls language server
 require('configurations.lsp.clangd') --- Setup clangd language server
 require('configurations.lsp.marksman') --- Setup marksman language server
 require('configurations.lsp.tsserver') --- Setup typescript language server
+require('configurations.lsp.rust_analyzer') --- Setup rust language server
+
