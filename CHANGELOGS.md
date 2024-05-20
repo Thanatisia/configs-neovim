@@ -6,6 +6,7 @@
 + [2024-03-07](#2024-03-07)
 + [2024-04-15](#2024-04-15)
 + [2024-05-16](#2024-05-16)
++ [2024-05-20](#2024-05-20)
 
 ## Logs
 ### 2024-01-03
@@ -120,4 +121,12 @@
         + Added new plugins
     - Updated lua script 'plugins.lua' in 'lua/'
         + Added new plugin 'stevearc/oil.nvim' : Neovim File Explorer/Manager that lets you edit files like a buffer
+
+### 2024-05-20
+#### 1430H
+- New
+    - Added new LSP configuration lua script 'rust_analyzer.lua' in 'src/lua/configurations/lsp/' for the Rust Language Server
+- Updates
+    - Updated lua script 'lsp.lua' in 'src/lua/'
+        + Added new LSP configuration lua script imports for rust_analyzer.lua
 
