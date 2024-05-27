@@ -151,6 +151,13 @@ plugins = {
             require'configurations.plugins.cyberdream'
         end
     },
+    {
+        "diegoulloao/neofusion.nvim",
+        priority = 1000 ,
+        config = function()
+            require'configurations.plugins.neofusion'
+        end
+    },
 
     --- Language Packs
     'sheerun/vim-polyglot',

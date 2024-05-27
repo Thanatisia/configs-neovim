@@ -7,6 +7,7 @@
 + [2024-04-15](#2024-04-15)
 + [2024-05-16](#2024-05-16)
 + [2024-05-20](#2024-05-20)
++ [2024-05-24](#2024-05-24)
 
 ## Logs
 ### 2024-01-03
@@ -129,4 +130,14 @@
 - Updates
     - Updated lua script 'lsp.lua' in 'src/lua/'
         + Added new LSP configuration lua script imports for rust_analyzer.lua
+
+### 2024-05-24
+#### 2323H
+- New
+    - Added new lua plugin configuration script 'neofusion.lua' in 'src/lua/configurations/plugins/' for the colorscheme plugin 'diegoulloao/neofusion.nvim'
+- Updates
+    - Updated lua script 'plugins.lua' in 'src/lua/'
+        + Added colorscheme plugin 'neofusion.nvim'
+    - Updated lua script 'settings.lua' in 'src/lua/'
+        + Added neofusion colorscheme
 
