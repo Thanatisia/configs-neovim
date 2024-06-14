@@ -152,10 +152,16 @@ plugins = {
         end
     },
     {
-        "diegoulloao/neofusion.nvim",
-        priority = 1000 ,
+        "diegoulloao/neofusion.nvim", 
+        priority = 1000 , 
         config = function()
             require'configurations.plugins.neofusion'
+        end
+    },
+    {
+        "loctvl842/monokai-pro.nvim", 
+        config = function()
+            require'configurations.plugins.monokai-pro'
         end
     },
 
@@ -222,9 +228,18 @@ plugins = {
         end
     },
 
-    --- Buffer Navigation/Status line/bar
-    'vim-airline/vim-airline', --- Status bar
-    'vim-airline/vim-airline-themes', --- Themes for the status bar/statusline 'vim-airline'
+    --- Status line/bar
+    --- 'vim-airline/vim-airline', --- Status bar
+    --- 'vim-airline/vim-airline-themes', --- Themes for the status bar/statusline 'vim-airline'
+    {
+        "nvim-lualine/lualine.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        config = function()
+            require('configurations.plugins.lualine')
+        end
+    },
+
+    --- Buffer Navigation
     {
         "ThePrimeagen/harpoon",
         branch = "harpoon2",
@@ -240,6 +255,8 @@ plugins = {
     --- Telescope
     'nvim-telescope/telescope-fzf-native.nvim', --- FZF support for Telescope
     {'nvim-telescope/telescope-file-browser.nvim', dependencies = {'nvim-lua/plenary.nvim'},}, --- File Browser plugin for Telescope
+
+    --- Personal
 
     --- Dependencies
     'nvim-lua/popup.nvim', -- Popup for other plugins, usually a dependency

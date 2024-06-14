@@ -8,6 +8,7 @@
 + [2024-05-16](#2024-05-16)
 + [2024-05-20](#2024-05-20)
 + [2024-05-24](#2024-05-24)
++ [2024-06-14](#2024-06-14)
 
 ## Logs
 ### 2024-01-03
@@ -140,4 +141,17 @@
         + Added colorscheme plugin 'neofusion.nvim'
     - Updated lua script 'settings.lua' in 'src/lua/'
         + Added neofusion colorscheme
+
+### 2024-06-14
+#### 1339H
+- New
+    + Added new lua plugin script 'lualine.lua' in 'lua/configurations/plugins/' for the status line plugin 'nvim-lualine/lualine'
+    + Added new lua plugin script 'monokai-pro.lua' in 'lua/configurations/plugins/' for the colorscheme plugin 'monokai-pro.nvim'
+
+- Updates
+    - Updated lua script 'plugins.lua' in 'lua/'
+        + Added new plugin 'lualine.nvim' : Status Line made in lua
+        + Added new colorscheme plugin 'monokai-pro.lua'
+    - Updated lua script 'settings.lua' in 'src/lua/'
+        + Replaced colorscheme 'neofusion' => 'monokai-pro-octagon'
 
